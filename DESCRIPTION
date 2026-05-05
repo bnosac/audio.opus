@@ -10,7 +10,7 @@ Authors@R: c(
     person('Jean-Marc Valin', role = c('aut', 'cph'), comment = "Original opusdec implementation / Resampler"),
     person('Thorvald Natvig', role = c('aut', 'cph'), comment = "Resampler"),
     person('Michael Smith', role = c('aut', 'cph'), comment = "Ogginfo (basis of opusinfo)"),
-    person('John Edwards', role = c('aut', 'cph'), comment = "Windows audio output"),
+    person('John Edwards', role = c('aut', 'cph'), comment = "Windows audio output"))
 Description: The package is an R wrapper around the the code provided at <https://github.com/xiph/opus-tools/>. 
     Encode, Inspect and Decode Audio in the 'Opus' format and convert it to wav.
 License: MPL-2.0
