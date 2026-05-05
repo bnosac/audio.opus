@@ -1,0 +1,20 @@
+Package: audio.opustools
+Type: Package
+Title: Encode, Inspect and Decode Audio in the 'Opus' format
+Version: 0.1
+Maintainer: Jan Wijffels <jwijffels@bnosac.be>
+Authors@R: c(
+    person('Jan', 'Wijffels', role = c('aut', 'cre', 'cph'), email = 'jwijffels@bnosac.be', comment = "R wrapper"), 
+    person('BNOSAC', role = 'cph', comment = "R wrapper"),
+    person('Gregory Maxwell', role = c('aut', 'cph'), comment = "Code in src/opus"),
+    person('Jean-Marc Valin', role = c('aut', 'cph'), comment = "Original opusdec implementation / Resampler"),
+    person('Thorvald Natvig', role = c('aut', 'cph'), comment = "Resampler"),
+    person('Michael Smith', role = c('aut', 'cph'), comment = "Ogginfo (basis of opusinfo)"),
+    person('John Edwards', role = c('aut', 'cph'), comment = "Windows audio output"),
+Description: The package is an R wrapper around the the code provided at <https://github.com/xiph/opus-tools/>. 
+    Encode, Inspect and Decode Audio in the 'Opus' format and convert it to wav.
+License: MPL-2.0
+URL: https://github.com/bnosac/audio.opustools
+Encoding: UTF-8
+Depends:
+    R (>= 2.10)

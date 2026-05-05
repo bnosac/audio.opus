@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.o
+*.dll
+dev/
+src/webrtc
+src/libfvad
+
