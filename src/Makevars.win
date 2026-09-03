@@ -1,0 +1,52 @@
+
+# For 64-bit Windows builds (Rtools x86_64)
+#PKG_CPPFLAGS = -I/mingw64/include
+#PKG_LIBS     = -L/mingw64/lib -lopus
+#PKG_LIBS     = -lopus
+
+PKG_CPPFLAGS = -I"C:/rtools45/x86_64-w64-mingw32.static.posix/include" -DOPUSTOOLS
+
+#pacman -S mingw-w64-x86_64-opus
+#pacman -S mingw-w64-x86_64-opus-tools
+#pacman -S mingw-w64-x86_64-libogg      
+#pacman -S mingw-w64-x86_64-libvorbis
+#pacman -S mingw-w64-x86_64-speexdsp
+
+#( 1/10) installeren mingw-w64-x86_64-libwinpthread-git       [###############################] 100%
+#( 2/10) installeren mingw-w64-x86_64-gcc-libs                [###############################] 100%
+#( 3/10) installeren mingw-w64-x86_64-libogg                  [###############################] 100%
+#( 4/10) installeren mingw-w64-x86_64-libiconv                [###############################] 100%
+#( 5/10) installeren mingw-w64-x86_64-gettext-runtime         [###############################] 100%
+#( 6/10) installeren mingw-w64-x86_64-flac                    [###############################] 100%
+#( 7/10) installeren mingw-w64-x86_64-openssl                 [###############################] 100%
+#( 8/10) installeren mingw-w64-x86_64-opusfile                [###############################] 100%
+#( 9/10) installeren mingw-w64-x86_64-libopusenc              [###############################] 100%
+#(10/10) installeren mingw-w64-x86_64-opus-tools   
+
+PACKAGE_NAME=opus-tools     
+PACKAGE_VERSION=0.2
+
+PKG_CPPFLAGS = -DSTRICT_R_HEADERS -DOPUSTOOLS -DPACKAGE_NAME -DPACKAGE_VERSION -Wno-format -I./opus-tools/ -I./win32/ \
+               -I"C:/rtools45/mingw64/include" \
+               -I"C:/rtools45/mingw64/include/opus" \
+               -I"C:/rtools45/mingw64/include/speex"
+
+PKG_LIBS = -L"C:/rtools45/x86_64-w64-mingw32.static.posix/lib" -lopus -logg -lspeexdsp
+PKG_LIBS = -lopus -logg -lspeexdsp
+
+SOURCES = opus-tools/audio-in.c \
+  opus-tools/diag_range.c \
+  opus-tools/flac.c \
+  opus-tools/info_opus.c \
+  opus-tools/opus_header.c \
+  opus-tools/opusdec.c \
+  opus-tools/opusenc.c \
+  opus-tools/opusinfo.c \
+  opus-tools/opusrtp.c \
+  opus-tools/picture.c \
+  #opus-tools/resample.c \
+  opus-tools/tagcompare.c \
+  opus-tools/wav_io.c \
+  opus-tools/wave_out.c  
+SOURCES += win32/unicode_support.c
+OBJECTS = $(SOURCES:.c=.o)  
