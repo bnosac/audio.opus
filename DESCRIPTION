@@ -4,18 +4,35 @@ Title: Encode, Inspect and Decode Audio in the 'Opus' format
 Version: 0.1
 Maintainer: Jan Wijffels <jwijffels@bnosac.be>
 Authors@R: c(
+    ## R wrapper
     person('Jan', 'Wijffels', role = c('aut', 'cre', 'cph'), email = 'jwijffels@bnosac.be', comment = "R wrapper"), 
     person('BNOSAC', role = 'cph', comment = "R wrapper"),
-    person('Gregory Maxwell', role = c('aut', 'cph'), comment = "Code in src/opus"),
-    person('Jean-Marc Valin', role = c('aut', 'cph'), comment = "Code in src/opus - Original opusdec implementation / Resampler"),
-    person('Thorvald Natvig', role = c('aut', 'cph'), comment = "Code in src/opus - Resampler"),
-    person('Michael Smith', role = c('aut', 'cph'), comment = "Code in src/opus - Ogginfo (basis of opusinfo)"),
+    ## src/opus-tools
+    person('Gregory Maxwell', role = c('aut', 'cph'), comment = "Code in src/opus-tools"),
+    person('Jean-Marc Valin', role = c('aut', 'cph'), comment = "Code in src/opus-tools - Original opusdec implementation / Resampler"),
+    person('Thorvald Natvig', role = c('aut', 'cph'), comment = "Code in src/opus-tools - Resampler"),
+    person('Michael Smith', role = c('aut', 'cph'), comment = "Code in src/opus-tools - Ogginfo (basis of opusinfo)"),
+    ## src/opusfile
     person('Timothy B. Terriberry', role = c('aut', 'cph'), comment = "Code in src/opusfile"),
     person('Ralph Giles', role = c('aut', 'cph'), comment = "Code in src/opusfile"),
     person('Christopher "Monty" Montgomery', role = c('aut', 'cph'), comment = "Code in src/opusfile - original libvorbisfile"),
     person('Gregory Maxwell', role = c('aut', 'cph'), comment = "Code in src/opusfile - noise shaping dithering"),
     person('nu774 <honeycomb77@gmail.com>', role = c('aut', 'cph'), comment = "Code in src/opusfile - original winsock support"),
-    person('TODO - add LICENS/AUTHORS OF src/speexdsp', role = c('aut', 'cph'), comment = "TODO"))
+    ## src/speexdsp
+    person('Jean-Marc Valin', role = c('aut', 'cph'), comment = "Code in src/speexdsp - All the code except the following"),
+    person('David Rowe', role = c('aut', 'cph'), comment = "Code in src/speexdsp - lsp.c lsp.h, Also ideas and feedback"),
+    person('John Francis Edwards', role = c('aut', 'cph'), comment = "Code in src/speexdsp - wave_out.[ch], some #ifdefs for windows port and MSVC project files"),
+    person('Segher Boessenkool', role = c('aut', 'cph'), comment = "Code in src/speexdsp - Misc. optimizations (for QMF in particular)"),
+    person('Atsuhiko Yamanaka', role = c('aut', 'cph'), comment = "Code in src/speexdsp - Patch to speexenc.c to add Vorbis comment format"),
+    person('Radim Kolar', role = c('aut', 'cph'), comment = "Code in src/speexdsp - Patch to speexenc.c for supporting more input formats"),
+    person('Tristan Matthews', role = c('aut', 'cph'), comment = "Code in src/speexdsp - Bug fixes, maintenance and releases"),
+    person('Xiph.org Foundation', role = c('cph'), comment = "Code in src/speexdsp"),
+    person('Jean-Marc Valin', role = c('cph'), comment = "Code in src/speexdsp"),
+    person('Analog Devices Inc.', role = c('cph'), comment = "Code in src/speexdsp"),
+    person('Commonwealth Scientific and Industrial Research Organisation (CSIRO)', role = c('cph'), comment = "Code in src/speexdsp"),
+    person('David Rowe', role = c('cph'), comment = "Code in src/speexdsp"),
+    person('EpicGames', role = c('cph'), comment = "Code in src/speexdsp"),
+    person('Jutta Degener, Carsten Bormann', role = c('cph'), comment = "Code in src/speexdsp"))
 Description: The package is an R wrapper around the the code provided at <https://github.com/xiph/opus-tools/>. 
     Encode, Inspect and Decode Audio in the 'Opus' format and convert it to wav.
 License: MPL-2.0
@@ -25,6 +42,6 @@ Depends:
     R (>= 2.10)
 Imports:
     Rcpp
-Requirements: libopus, libogg
+Requirements: libopus
 Config/roxygen2/version: 8.1.0
 RoxygenNote: 7.1.2
