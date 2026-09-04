@@ -14,7 +14,8 @@ Authors@R: c(
     person('Ralph Giles', role = c('aut', 'cph'), comment = "Code in src/opusfile"),
     person('Christopher "Monty" Montgomery', role = c('aut', 'cph'), comment = "Code in src/opusfile - original libvorbisfile"),
     person('Gregory Maxwell', role = c('aut', 'cph'), comment = "Code in src/opusfile - noise shaping dithering"),
-    person('nu774 <honeycomb77@gmail.com>', role = c('aut', 'cph'), comment = "Code in src/opusfile - original winsock support"))
+    person('nu774 <honeycomb77@gmail.com>', role = c('aut', 'cph'), comment = "Code in src/opusfile - original winsock support"),
+    person('TODO - add LICENS/AUTHORS OF src/speexdsp', role = c('aut', 'cph'), comment = "TODO"))
 Description: The package is an R wrapper around the the code provided at <https://github.com/xiph/opus-tools/>. 
     Encode, Inspect and Decode Audio in the 'Opus' format and convert it to wav.
 License: MPL-2.0
