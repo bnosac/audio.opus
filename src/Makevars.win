@@ -38,7 +38,7 @@ PACKAGE_VERSION=0.2
 #PKG_LIBS = -lopus -logg -lspeexdsp
 #PKG_LIBS = -lopus -logg
 
-PKG_CPPFLAGS = -DSTRICT_R_HEADERS -DOPUSTOOLS -DPACKAGE_NAME -DPACKAGE_VERSION -Wno-format -I. -I./opus-tools/ -I./win32/ \
+PKG_CPPFLAGS = -DSTRICT_R_HEADERS -DOPUSTOOLS -DPACKAGE_NAME -DPACKAGE_VERSION -Wno-format -I. -I./opus-tools/src -I./opus-tools/win32/ \
                -I./opusfile/include \
                -I./speexdsp/include -I./speexdsp/include/speex -DFLOATING_POINT -I./speexdsp/ti -DEXPORT= \
                -I/mingw64/include/opus
@@ -52,22 +52,22 @@ SOURCES = opus_decode_r.c \
   opusfile/src/stream.c \
   opusfile/src/internal.c \
   speexdsp/libspeexdsp/resample.c \
-  opus-tools/audio-in.c \
-  opus-tools/diag_range.c \
-  opus-tools/flac.c \
-  opus-tools/opus_header.c \
-  opus-tools/opusdec.c \
-  opus-tools/wav_io.c \
-  opus-tools/wave_out.c    
-  #opus-tools/info_opus.c \
-  #opus-tools/opusinfo.c \
-  #opus-tools/opusenc.c \
-  #opus-tools/opusrtp.c \
-  #opus-tools/picture.c \
-  #opus-tools/tagcompare.c \
-  #opus-tools/resample.c \
+  opus-tools/src/audio-in.c \
+  opus-tools/src/diag_range.c \
+  opus-tools/src/flac.c \
+  opus-tools/src/opus_header.c \
+  opus-tools/src/opusdec.c \
+  opus-tools/src/wav_io.c \
+  opus-tools/src/wave_out.c    
+  #opus-tools/src/info_opus.c \
+  #opus-tools/src/opusinfo.c \
+  #opus-tools/src/opusenc.c \
+  #opus-tools/src/opusrtp.c \
+  #opus-tools/src/picture.c \
+  #opus-tools/src/tagcompare.c \
+  #opus-tools/src/resample.c \
 
-SOURCES += win32/unicode_support.c
+SOURCES += opus-tools/win32/unicode_support.c
 OBJECTS = $(SOURCES:.c=.o)  
 
 all: clean
