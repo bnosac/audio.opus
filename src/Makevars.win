@@ -1,10 +1,13 @@
+PACKAGE_NAME=opus-tools     
+PACKAGE_VERSION=0.2
+
 
 # For 64-bit Windows builds (Rtools x86_64)
 #PKG_CPPFLAGS = -I/mingw64/include
 #PKG_LIBS     = -L/mingw64/lib -lopus
 #PKG_LIBS     = -lopus
 
-PKG_CPPFLAGS = -I"C:/rtools45/x86_64-w64-mingw32.static.posix/include" -DOPUSTOOLS
+#PKG_CPPFLAGS = -I"C:/rtools45/x86_64-w64-mingw32.static.posix/include" -DOPUSTOOLS
 
 #pacman -S mingw-w64-x86_64-opus
 #pacman -S mingw-w64-x86_64-opus-tools
@@ -23,22 +26,27 @@ PKG_CPPFLAGS = -I"C:/rtools45/x86_64-w64-mingw32.static.posix/include" -DOPUSTOO
 #( 9/10) installeren mingw-w64-x86_64-libopusenc              [###############################] 100%
 #(10/10) installeren mingw-w64-x86_64-opus-tools   
 
-PACKAGE_NAME=opus-tools     
-PACKAGE_VERSION=0.2
-
-PKG_CPPFLAGS = -DSTRICT_R_HEADERS -DOPUSTOOLS -DPACKAGE_NAME -DPACKAGE_VERSION -Wno-format -I./opus-tools/ -I./win32/ \
-               -I./opusfile/include \
-               -I./speexdsp/include/speex -DFLOATING_POINT -I./speexdsp/ti -DEXPORT= \
-               -I"C:/rtools45/mingw64/include" \
-               -I"C:/rtools45/mingw64/include/opus" \
-               -I"C:/rtools45/mingw64/include/speex"
-
+#PKG_CPPFLAGS = -DSTRICT_R_HEADERS -DOPUSTOOLS -DPACKAGE_NAME -DPACKAGE_VERSION -Wno-format -I./opus-tools/ -I./win32/ \
+#               -I./opusfile/include \
+#               -I./speexdsp/include/speex -DFLOATING_POINT -I./speexdsp/ti -DEXPORT= \
+#               -I"C:/rtools45/mingw64/include" \
+#               -I"C:/rtools45/mingw64/include/opus" \
+#               -I"C:/rtools45/mingw64/include/speex"
 #PKG_LIBS = -L"C:/rtools45/x86_64-w64-mingw32.static.posix/lib" -lopus -logg -lspeexdsp
-PKG_LIBS = -L"C:/rtools45/x86_64-w64-mingw32.static.posix/lib" -lopus -logg -lspeex -lwinmm
+#PKG_LIBS = -L"C:/rtools45/x86_64-w64-mingw32.static.posix/lib" -lopus -logg -lspeex -lwinmm
+#PKG_LIBS = -L"C:/rtools45/x86_64-w64-mingw32.static.posix/lib" -lopus -logg -lwinmm
 #PKG_LIBS = -lopus -logg -lspeexdsp
 #PKG_LIBS = -lopus -logg
 
-SOURCES = opusfile/src/opusfile.c \
+PKG_CPPFLAGS = -DSTRICT_R_HEADERS -DOPUSTOOLS -DPACKAGE_NAME -DPACKAGE_VERSION -Wno-format -I./opus-tools/ -I./win32/ \
+               -I./opusfile/include \
+               -I./speexdsp/include -I./speexdsp/include/speex -DFLOATING_POINT -I./speexdsp/ti -DEXPORT= \
+               -I/mingw64/include/opus
+PKG_LIBS = -lopus -logg -lwinmm
+
+
+SOURCES = opus_decode_r.c \
+  opusfile/src/opusfile.c \
   opusfile/src/info.c \
   opusfile/src/http.c \
   opusfile/src/stream.c \
