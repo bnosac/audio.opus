@@ -40,6 +40,28 @@ jobs:
           r-version: ${{ matrix.config.r }}
           http-user-agent: ${{ matrix.config.http-user-agent }}
           use-public-rspm: true
+          
+      # --- Linux system deps ---
+      - name: Install system dependencies (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libopus-dev libogg-dev
+
+      # --- macOS system deps ---
+      - name: Install system dependencies (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          brew install opus libogg
+
+      # --- Windows system deps ---
+      - name: Install system dependencies (Windows)
+        if: runner.os == 'Windows'
+        shell: bash
+        run: |
+          "${RTOOLS40_HOME}/usr/bin/pacman" -Syu --noconfirm
+          "${RTOOLS40_HOME}/usr/bin/pacman" -S --noconfirm mingw-w64-x86_64-opus mingw-w64-x86_64-libogg
+          
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
