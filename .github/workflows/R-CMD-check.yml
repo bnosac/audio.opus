@@ -46,7 +46,7 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update
-          sudo apt-get install -y libopus-dev libogg-dev
+          sudo apt-get install -y libopus-dev libogg-dev libopusenc-dev
 
       # --- macOS system deps ---
       - name: Install system dependencies (macOS)
@@ -60,7 +60,7 @@ jobs:
         shell: bash
         run: |
           "${RTOOLS45_HOME}/usr/bin/pacman" -Sy --noconfirm
-          "${RTOOLS45_HOME}/usr/bin/pacman" -S --noconfirm mingw-w64-x86_64-opus mingw-w64-x86_64-libogg
+          "${RTOOLS45_HOME}/usr/bin/pacman" -S --noconfirm mingw-w64-x86_64-opus mingw-w64-x86_64-libogg mingw-w64-x86_64-libopusenc
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
