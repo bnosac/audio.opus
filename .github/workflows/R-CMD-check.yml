@@ -52,7 +52,6 @@ jobs:
       - name: Install system dependencies (macOS)
         if: runner.os == 'macOS'
         run: |
-          brew install opus libogg
           brew install opus libogg libopusenc
           echo "PKG_CONFIG_PATH=$(brew --prefix opus)/lib/pkgconfig:$(brew --prefix libogg)/lib/pkgconfig:$(brew --prefix libopusenc)/lib/pkgconfig:$PKG_CONFIG_PATH" >> $GITHUB_ENV
 
