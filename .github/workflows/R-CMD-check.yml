@@ -59,7 +59,6 @@ jobs:
         if: runner.os == 'Windows'
         shell: bash
         run: |
-          "${RTOOLS40_HOME}/usr/bin/pacman" -Syu --noconfirm
           "${RTOOLS40_HOME}/usr/bin/pacman" -S --noconfirm mingw-w64-x86_64-opus mingw-w64-x86_64-libogg
           
 
