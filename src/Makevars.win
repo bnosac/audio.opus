@@ -70,7 +70,3 @@ SOURCES = opus_decode_r.c \
 SOURCES += opus-tools/win32/unicode_support.c
 OBJECTS = $(SOURCES:.c=.o)  
 
-all: clean
-
-clean:
-	rm -f $(SHLIB) $(OBJECTS)
