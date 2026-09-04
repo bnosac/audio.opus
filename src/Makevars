@@ -43,7 +43,7 @@ PKG_CPPFLAGS = -DSTRICT_R_HEADERS -DOPUSTOOLS -DPACKAGE_NAME -DPACKAGE_VERSION -
                -I./speexdsp/include -I./speexdsp/include/speex -DFLOATING_POINT -I./speexdsp/ti -DEXPORT=
 PKG_LIBS = -lopus -logg
 
-PKG_CPPFLAGS = -DSTRICT_R_HEADERS -DOPUSTOOLS -DPACKAGE_NAME -DPACKAGE_VERSION -Wno-format -I. -I./opus-tools/src \
+PKG_CPPFLAGS = -DSTRICT_R_HEADERS -DOPUSTOOLS -DPACKAGE_NAME -DPACKAGE_VERSION -I. -I./opus-tools/src \
                -I./opusfile/include \
                -I./speexdsp/include -I./speexdsp/include/speex -DFLOATING_POINT -I./speexdsp/ti -DEXPORT= \
                $(shell pkg-config --cflags opus ogg libopusenc 2>/dev/null || echo -I/usr/include/opus)
