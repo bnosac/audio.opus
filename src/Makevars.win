@@ -38,7 +38,7 @@ PACKAGE_VERSION=0.2
 #PKG_LIBS = -lopus -logg -lspeexdsp
 #PKG_LIBS = -lopus -logg
 
-PKG_CPPFLAGS = -DSTRICT_R_HEADERS -DOPUSTOOLS -DPACKAGE_NAME -DPACKAGE_VERSION -Wno-format -I. -I./opus-tools/src -I./opus-tools/win32/ \
+PKG_CPPFLAGS = -DSTRICT_R_HEADERS -DOPUSTOOLS -DPACKAGE_NAME -DPACKAGE_VERSION -I. -I./opus-tools/src -I./opus-tools/win32/ \
                -I./opusfile/include \
                -I./speexdsp/include -I./speexdsp/include/speex -DFLOATING_POINT -I./speexdsp/ti -DEXPORT= \
                -I/mingw64/include/opus
