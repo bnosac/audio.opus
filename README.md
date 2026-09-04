@@ -5,7 +5,7 @@ This repository contains an R package which is a wrapper around the [opus-tools]
 The package was created with as main goal to convert opus files to wav files to be able to do automatic transcription using [audio.whisper](https://github.com/bnosac/audio.whisper). It contains
 
 - functions to to convert opus files to wav
-- which are many times faster then using ffmpeg with av
+- which is faster then using ffmpeg with av
 
 ### Installation
 
@@ -20,11 +20,26 @@ Look to the documentation of the functions: `help(package = "audio.opus")`
 
 ## Example
 
+- Convert an opus file to wav
+
 ```{r}
 library(audio.opus)
 file <- system.file(package = "audio.opus", "extdata", "test_opus.opus")
 opus_decode(input = file, "test_opus.wav")
 ```
+
+- Compare to av
+
+```{r}
+library(av)
+system.time({
+  opus_decode(file, "test_opus.wav")
+})
+system.time({
+  av::av_audio_convert(file, "test_opus.wav")
+})
+```
+
 
 
 ## Support in text mining
