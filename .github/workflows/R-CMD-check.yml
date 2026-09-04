@@ -59,9 +59,9 @@ jobs:
         if: runner.os == 'Windows'
         shell: bash
         run: |
-          "${RTOOLS44_HOME}/usr/bin/pacman" -Syu --noconfirm || true
-          "${RTOOLS44_HOME}/usr/bin/pacman" -Syu --noconfirm
-          "${RTOOLS44_HOME}/usr/bin/pacman" -S --noconfirm mingw-w64-x86_64-opus mingw-w64-x86_64-libogg          
+        run: |
+          "${RTOOLS45_HOME}/usr/bin/pacman" -Sy --noconfirm
+          "${RTOOLS45_HOME}/usr/bin/pacman" -S --noconfirm mingw-w64-x86_64-opus mingw-w64-x86_64-libogg
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
