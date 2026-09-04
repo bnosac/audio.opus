@@ -1,2 +1,2 @@
-#' @useDynLib audio.opus
+#' @useDynLib audio.opus, .registration = TRUE
 NULL

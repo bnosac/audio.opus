@@ -37,7 +37,7 @@ opus_decode <- function(input,
     gain_db <- as.double(gain_db)
     float   <- as.logical(float)
     
-    result <- .Call(C_opus_decode,
+    result <- .Call("C_opus_decode",
                     input, output,
                     rate, stereo, gain_db, float)
     

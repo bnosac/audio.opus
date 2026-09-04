@@ -49,7 +49,8 @@ PKG_CPPFLAGS = -DSTRICT_R_HEADERS -DOPUSTOOLS -DPACKAGE_NAME -DPACKAGE_VERSION -
                $(shell pkg-config --cflags opus ogg libopusenc 2>/dev/null || echo -I/usr/include/opus)
 PKG_LIBS = $(shell pkg-config --libs opus ogg libopusenc 2>/dev/null || echo -lopus -logg -lopusenc)
 
-SOURCES = opus_decode_r.c \
+SOURCES = init.c \
+  opus_decode_r.c \
   opusfile/src/opusfile.c \
   opusfile/src/info.c \
   opusfile/src/http.c \
