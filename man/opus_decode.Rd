@@ -40,5 +40,4 @@ Decode an Opus audio file to WAV
   opus_decode("music.opus",  "music.wav", rate = 44100, stereo = TRUE)
   opus_decode("audio.opus",  "audio.wav", gain_db = -3, float = TRUE)
 }
-
 }

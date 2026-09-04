@@ -2,4 +2,3 @@
 
 export(opus_decode)
 useDynLib(audio.opus, .registration = TRUE)
-useDynLib(audio.opus,C_opus_decode)

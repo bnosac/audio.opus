@@ -17,8 +17,6 @@
 #'   opus_decode("music.opus",  "music.wav", rate = 44100, stereo = TRUE)
 #'   opus_decode("audio.opus",  "audio.wav", gain_db = -3, float = TRUE)
 #' }
-#'
-#' @useDynLib audio.opus C_opus_decode
 #' @export
 opus_decode <- function(input,
                         output,
