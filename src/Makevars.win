@@ -28,13 +28,13 @@ PACKAGE_VERSION=0.2
 
 PKG_CPPFLAGS = -DSTRICT_R_HEADERS -DOPUSTOOLS -DPACKAGE_NAME -DPACKAGE_VERSION -Wno-format -I./opus-tools/ -I./win32/ \
                -I./opusfile/include \
-               -I./speexdsp/include/speex -DFLOATING_POINT -I./speexdsp/ti \
+               -I./speexdsp/include/speex -DFLOATING_POINT -I./speexdsp/ti -DEXPORT= \
                -I"C:/rtools45/mingw64/include" \
                -I"C:/rtools45/mingw64/include/opus" \
                -I"C:/rtools45/mingw64/include/speex"
 
 #PKG_LIBS = -L"C:/rtools45/x86_64-w64-mingw32.static.posix/lib" -lopus -logg -lspeexdsp
-PKG_LIBS = -L"C:/rtools45/x86_64-w64-mingw32.static.posix/lib" -lopus -logg -lspeex
+PKG_LIBS = -L"C:/rtools45/x86_64-w64-mingw32.static.posix/lib" -lopus -logg -lspeex -lwinmm
 #PKG_LIBS = -lopus -logg -lspeexdsp
 #PKG_LIBS = -lopus -logg
 
@@ -42,7 +42,6 @@ SOURCES = opusfile/src/opusfile.c \
   opusfile/src/info.c \
   opusfile/src/http.c \
   opusfile/src/stream.c \
-  opusfile/src/internal.c \
   opusfile/src/internal.c \
   speexdsp/libspeexdsp/resample.c \
   opus-tools/audio-in.c \
