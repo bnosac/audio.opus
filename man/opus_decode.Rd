@@ -38,6 +38,9 @@ Decode an Opus audio file to WAV
 library(audio.opus)
 file <- system.file(package = "audio.opus", "extdata", "test_opus.opus")
 opus_decode(input = file, "test_opus.wav")
+\dontshow{
+file.remove("test_opus.wav")
+}
 \dontrun{
   opus_decode("speech.opus", "speech.wav")
   opus_decode("music.opus",  "music.wav", rate = 44100, stereo = TRUE)
