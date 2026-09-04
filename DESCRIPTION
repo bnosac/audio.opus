@@ -40,6 +40,6 @@ URL: https://github.com/bnosac/audio.opus
 Encoding: UTF-8
 Depends:
     R (>= 2.10)
-Requirements: libopus, libogg
+SystemRequirements: libopus: libopus-dev (deb), libogg: libogg-dev (deb)
 Config/roxygen2/version: 8.1.0
 RoxygenNote: 7.1.2
