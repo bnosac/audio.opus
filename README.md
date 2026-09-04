@@ -22,7 +22,7 @@ Look to the documentation of the functions: `help(package = "audio.opus")`
 
 ```{r}
 library(audio.opus)
-file <- system.file(package = "audio.opuse", "extdata", "test_opus.opus")
+file <- system.file(package = "audio.opus", "extdata", "test_opus.opus")
 opus_decode(input = file, "test_opus.wav")
 ```
 
