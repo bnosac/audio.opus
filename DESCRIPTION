@@ -42,4 +42,3 @@ Depends:
     R (>= 2.10)
 SystemRequirements: GNU make, libopus: libopus-dev (deb), libogg: libogg-dev (deb), libopusenc: libopusenc-dev (deb)
 Config/roxygen2/version: 8.1.0
-RoxygenNote: 7.1.2

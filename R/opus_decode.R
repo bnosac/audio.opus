@@ -9,7 +9,10 @@
 #' @param float   Logical. Write 32-bit IEEE float WAV instead of 16-bit PCM.
 #'                Default \code{FALSE}.
 #'
-#' @return Invisibly returns \code{0} on success, \code{1} on failure.
+#' @return Invisibly returns an object of class opus_decode which is a list with elements 
+#' success indicating if the file was created
+#' and the elements input, output, rate, stereo, gain_db, float and 
+#' 
 #'
 #' @examples
 #' library(audio.opus)
@@ -44,9 +47,15 @@ opus_decode <- function(input,
     result <- .Call("C_opus_decode",
                     input, output,
                     rate, stereo, gain_db, float)
-    
-    if (result != 0L)
-        warning("opus_decode: decoding finished with error code ", result)
-    
+    result <- list(
+        success = !as.logical(result),
+        input = input,
+        output = output,
+        rate = rate,
+        stereo = stereo,
+        gain_db = gain_db,
+        float = float
+    )
+    class(result) <- "opus_decode"
     invisible(result)
 }
