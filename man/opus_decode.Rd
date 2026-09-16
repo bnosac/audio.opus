@@ -29,7 +29,9 @@ the stream's original rate (falling back to 48000 if unknown).}
 Default \code{FALSE}.}
 }
 \value{
-Invisibly returns \code{0} on success, \code{1} on failure.
+Invisibly returns an object of class opus_decode which is a list with elements 
+success indicating if the file was created
+and the elements input, output, rate, stereo, gain_db, float and
 }
 \description{
 Decode an Opus audio file to WAV
