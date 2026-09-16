@@ -9,10 +9,10 @@ The package was created with as main goal to convert opus files to wav files to 
 
 ### Installation
 
-- The package depends on libopus and libogg
+- The package depends on libopus, libogg and libopusenc
     - On Windows you can install these with RTools: `pacman -S mingw-w64-x86_64-opus mingw-w64-x86_64-libogg`
     - On Mac: `brew install opus libogg libopusenc`
-    - On Ubuntu `apt install libopus-dev libogg-dev`
+    - On Ubuntu `apt install libopus-dev libogg-dev libopusenc-dev`
 - The package is currently not on CRAN
 - For the *development* version of this package: `remotes::install_github("bnosac/audio.opus")`
 
