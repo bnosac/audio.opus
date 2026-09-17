@@ -31,10 +31,11 @@ opus_decode(input = file, "test_opus.wav")
 - Compare to av
 
 ```{r}
-library(av)
+library(audio.opus)
 system.time({
   opus_decode(file, "test_opus.wav")
 })
+library(av)
 system.time({
   av::av_audio_convert(file, "test_opus.wav")
 })
