@@ -46,14 +46,14 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update
-          sudo apt-get install -y libopus-dev libogg-dev libopusenc-dev
+          sudo apt-get install -y libopus-dev libogg-dev
 
       # --- macOS system deps ---
       - name: Install system dependencies (macOS)
         if: runner.os == 'macOS'
         run: |
-          brew install opus libogg libopusenc
-          echo "PKG_CONFIG_PATH=$(brew --prefix opus)/lib/pkgconfig:$(brew --prefix libogg)/lib/pkgconfig:$(brew --prefix libopusenc)/lib/pkgconfig:$PKG_CONFIG_PATH" >> $GITHUB_ENV
+          brew install opus libogg
+          echo "PKG_CONFIG_PATH=$(brew --prefix opus)/lib/pkgconfig:$(brew --prefix libogg)/lib/pkgconfig:$PKG_CONFIG_PATH" >> $GITHUB_ENV
 
       # --- Windows system deps ---
       - name: Install system dependencies (Windows)
@@ -61,7 +61,7 @@ jobs:
         shell: bash
         run: |
           "${RTOOLS45_HOME}/usr/bin/pacman" -Sy --noconfirm
-          "${RTOOLS45_HOME}/usr/bin/pacman" -S --noconfirm mingw-w64-x86_64-opus mingw-w64-x86_64-libogg mingw-w64-x86_64-libopusenc
+          "${RTOOLS45_HOME}/usr/bin/pacman" -S --noconfirm mingw-w64-x86_64-opus mingw-w64-x86_64-libogg
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
