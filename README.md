@@ -37,7 +37,7 @@ system.time({
 })
 library(av)
 system.time({
-  av::av_audio_convert(file, "test_opus.wav")
+  av_audio_convert(file, "test_opus.wav")
 })
 ```
 
