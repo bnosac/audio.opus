@@ -9,7 +9,7 @@ The package was created with as main goal to convert opus files to wav files to 
 
 ### Installation
 
-- The package depends on libopus, libogg and libopusenc
+- The package depends on libopus and libogg
     - On Windows you can install these with RTools: `pacman -S mingw-w64-x86_64-opus mingw-w64-x86_64-libogg`
     - On Mac: `brew install opus libogg`
     - On Ubuntu `apt install libopus-dev libogg-dev`
