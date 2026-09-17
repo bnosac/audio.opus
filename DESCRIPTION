@@ -1,7 +1,7 @@
 Package: audio.opus
 Type: Package
 Title: Encode, Inspect and Decode Audio in the 'Opus' format
-Version: 0.1
+Version: 0.2
 Maintainer: Jan Wijffels <jwijffels@bnosac.be>
 Authors@R: c(
     ## R wrapper
@@ -32,7 +32,12 @@ Authors@R: c(
     person('Commonwealth Scientific and Industrial Research Organisation (CSIRO)', role = c('cph'), comment = "Code in src/speexdsp"),
     person('David Rowe', role = c('cph'), comment = "Code in src/speexdsp"),
     person('EpicGames', role = c('cph'), comment = "Code in src/speexdsp"),
-    person('Jutta Degener, Carsten Bormann', role = c('cph'), comment = "Code in src/speexdsp"))
+    person('Jutta Degener, Carsten Bormann', role = c('cph'), comment = "Code in src/speexdsp"),
+    ## src/libopusenc
+    person('Jean-Marc Valin', role = c('aut', 'cph'), comment = "Code in src/libopusenc"),
+    person('Timothy B. Terriberry', role = c('aut', 'cph'), comment = "Code in src/libopusenc"),
+    person('Ralph Giles', role = c('aut', 'cph'), comment = "Code in src/libopusenc")
+    )
 Description: The package is an R wrapper around the the code provided at <https://github.com/xiph/opus-tools/>. 
     Encode, Inspect and Decode Audio in the 'Opus' format and convert it to wav.
 License: MPL-2.0

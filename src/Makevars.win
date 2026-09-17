@@ -39,7 +39,7 @@ PACKAGE_VERSION=0.2
 #PKG_LIBS = -lopus -logg
 
 PKG_CPPFLAGS = -DSTRICT_R_HEADERS -DOPUSTOOLS -DPACKAGE_NAME -DPACKAGE_VERSION -I. -I./opus-tools/src -I./opus-tools/win32/ \
-               -I./opusfile/include \
+               -I./opusfile/include -I./libopusenc/include \
                -I./speexdsp/include -I./speexdsp/include/speex -DFLOATING_POINT -I./speexdsp/ti -DEXPORT= \
                -I/mingw64/include/opus
 PKG_LIBS = -lopus -logg -lwinmm
@@ -53,6 +53,12 @@ SOURCES = init.c \
   opusfile/src/stream.c \
   opusfile/src/internal.c \
   speexdsp/libspeexdsp/resample.c \
+  libopusenc/src/ogg_packer.c \
+  libopusenc/src/opus_header.c \
+  libopusenc/src/opusenc.c \
+  libopusenc/src/picture.c \
+  libopusenc/src/random.c \
+  libopusenc/src/unicode_support.c \
   opus-tools/src/audio-in.c \
   opus-tools/src/diag_range.c \
   opus-tools/src/flac.c \
